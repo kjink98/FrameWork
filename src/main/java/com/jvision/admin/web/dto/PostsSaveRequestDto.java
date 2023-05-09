@@ -4,7 +4,7 @@ import com.jvision.admin.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
+// 계층 간 데이터 교환을 위한 객체
 @Getter
 @NoArgsConstructor
 public class PostsSaveRequestDto {
