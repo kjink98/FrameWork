@@ -21,12 +21,12 @@ public class IndexController {
     public String index(Model model)
     {
         model.addAttribute("posts", postsService.findAllDesc());
-        return "index";
+        return "index"; // index에 확장자가 자동 지정
     }
 
     @GetMapping("/posts/save")
     public String postsSave(){
-        return "posts-save";
+        return "posts-save"; // /posts/save를 호출하면 posts-save 리턴. 즉, posts-save.mustache 파일 호출
     }
 
     @GetMapping("/posts/update/{id}")

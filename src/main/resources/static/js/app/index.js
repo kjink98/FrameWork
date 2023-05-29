@@ -33,6 +33,7 @@ var main = {
             alert(JSON.stringify(error));
         });
     },
+    // 신규로 추가될 update 함수
     update : function () {
         var data = {
             title: $("#title").val(),
@@ -42,7 +43,7 @@ var main = {
         var id = $('#id').val();
 
         $.ajax({
-            type: 'PUT',
+            type: 'PUT', // PostsApiController에 있는 API에서 @PutMapping으로 선언(REST 규약)
             url: '/api/v1/posts/'+id,
             dataType: 'json',
             contentType:'application/json; charset=utf-8',

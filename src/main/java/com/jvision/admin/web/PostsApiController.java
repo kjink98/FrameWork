@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 // Controller은 토스해주는 역할
 @RestController
+// 수정, 조회 API 코드 확인
 public class PostsApiController {
     private final PostsService postsService;
 
@@ -26,16 +27,19 @@ public class PostsApiController {
     // @pathVariable => 밑에 id가 전달받는 id값이다 라는 걸 알려주기 위해
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto){
         return postsService.update(id, requestDto);
+        // 클라이언트의 수정 요청 처리 메소드
     }
 
     @GetMapping("/api/v1/posts/{id}")
     public PostsResponseDto findById(@PathVariable Long id){
         return postsService.findById(id);
+        // 클라이언트의 삭제 요청 처리 메소드
     }
 
     @DeleteMapping("/api/v1/posts/{id}")
     public Long delete(@PathVariable Long id){
         postsService.delete(id);
         return id;
+        // DB내 posts 삭제 후 id 리턴
     }
 }
