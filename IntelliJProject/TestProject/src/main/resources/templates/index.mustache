@@ -1,0 +1,35 @@
+{{>layout/header}}
+
+<h1> 회원관리 페이지</h1>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/members/save" role="button" class="btn btn-primary"> 회원등록</a>
+
+        </div>
+    </div>
+
+    <br>
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th> 회원ID </th>
+            <th> 이름 </th>
+            <th> 전화번호 </th>
+            <th> 주소 </th>
+
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#members}}
+            <tr>
+                <td> {{id}} </td>
+                <td> {{name}}</td>
+                <td> {{tel}}</td>
+                <td> {{addr}}</td>
+            </tr>
+        {{/members}}
+        </tbody>
+    </table>
+</div>
+{{>layout/footer}}
