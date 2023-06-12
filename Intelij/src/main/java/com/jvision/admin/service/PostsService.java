@@ -42,6 +42,8 @@ public class PostsService {
     @Transactional
     public List<PostsListResponseDto> findAllDesc() {
         return postsRepository.findAllDesc().stream()
+                // postsRepository 결과로 넘어온 posts의 스트림을 map을 통해 PostsListResponseDto 변환
+                // List로 반환하는 베소드
                 .map(PostsListResponseDto::new)
                 .collect(Collectors.toList());
     }

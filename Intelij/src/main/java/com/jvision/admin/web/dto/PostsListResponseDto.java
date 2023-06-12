@@ -10,6 +10,7 @@ public class PostsListResponseDto {
     private String title;
     private String author;
 
+    // DB로부터 넘어온 Posts 객체 entity를 PostsListResponseDto 객체로 변환
     public PostsListResponseDto(Posts entity) {
         this.id = entity.getId();
         this.title = entity.getTitle();
