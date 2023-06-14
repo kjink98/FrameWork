@@ -1,5 +1,6 @@
 package com.jvision.admin.web.dto;
 
+import com.jvision.web.dto.HelloResponseDto;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 

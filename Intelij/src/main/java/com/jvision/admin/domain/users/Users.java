@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class Users {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,7 +22,6 @@ public class Users {
 
     @Column
     private String picture;
-
     // JPA로 DB에 사용자 데이터 저장 시 int가 아닌 String 형태로 저장
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -38,11 +38,11 @@ public class Users {
     public Users update(String name, String picture){
         this.name = name;
         this.picture = picture;
+
         return this;
     }
 
-    public String getRoleKey(){
+    public String getRoleKey() {
         return this.role.getKey();
     }
-
 }

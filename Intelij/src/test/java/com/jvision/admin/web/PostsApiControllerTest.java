@@ -2,9 +2,8 @@ package com.jvision.admin.web;
 
 import com.jvision.admin.domain.posts.Posts;
 import com.jvision.admin.domain.posts.PostsRepository;
-import com.jvision.admin.web.dto.PostsSaveRequestDto;
-import com.jvision.admin.web.dto.PostsUpdateRequestDto;
-import org.apache.catalina.loader.ResourceEntry;
+import com.jvision.web.dto.PostsSaveRequestDto;
+import com.jvision.web.dto.PostsUpdateRequestDto;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

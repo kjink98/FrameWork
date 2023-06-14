@@ -33,46 +33,42 @@ var main = {
             alert(JSON.stringify(error));
         });
     },
+        update : function () {
+            var data = {
+                title: $('#title').val(),
+                content: $('#content').val()
+            };
 
-    // 신규로 추가될 update 함수
-    update : function () {
-        var data = {
-            title: $("#title").val(),
-            content: $("#content").val()
-        };
+            var id = $('#id').val();
 
-        var id = $('#id').val();
-
-        $.ajax({
-            type : 'PUT', // PostsApiController에 있는 API에서 @PutMapping으로 선언(REST 규약)
-            url : '/api/v1/posts/'+id,
-            dataType : 'json',
-            contentType :'application/json; charset=utf-8',
-            data: JSON.stringify(data)
-        }).done(function() {
-            alert('글이 수정되었습니다.');
-            window.location.href = '/';
-        }).fail(function (error) {
-            alert(JSON.stringify(error));
-        });
-    },
-
+            $.ajax({
+                type: 'PUT',
+                url: '/api/v1/posts/' + id,
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(data)
+            }).done(function() {
+                alert('글이 수정되었습니다.');
+                window.location.href = '/';
+            }).fail(function (error){
+                alert(JSON.stringify(error));
+            });
+        },
     delete : function () {
         var id = $('#id').val();
 
         $.ajax({
             type: 'DELETE',
-            url: '/api/v1/posts/'+id,
+            url: '/api/v1/posts/' + id,
             dataType: 'json',
             contentType:'application/json; charset=utf-8'
         }).done(function() {
             alert('글이 삭제되었습니다.');
-            window.location.href = '/';
-        }).fail(function (error) {
+            window.location.href ='/';
+        }).fail(function (error){
             alert(JSON.stringify(error));
         });
     }
-
 };
 
 main.init();
