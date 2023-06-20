@@ -1,0 +1,29 @@
+{{>layout/header}}
+
+<h1> 회원조회 페이지</h1>
+<div class="col-md-12">
+    <br>
+    <table class="table table-horizontal table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th> 일련번호 </th>
+            <th> 아이디 </th>
+            <th> 이름 </th>
+            <th> 비밀번호 </th>
+            <th> 이메일 </th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#members}}
+            <tr>
+                <td>{{num}}</td>
+                <td><a href="/members/update/{{num}}">{{id}}</a></td>
+                <td>{{name}}</td>
+                <td>{{pass}}</td>
+                <td>{{email}}</td>
+            </tr>
+        {{/members}}
+        </tbody>
+    </table>
+</div>
+{{>layout/footer}}
