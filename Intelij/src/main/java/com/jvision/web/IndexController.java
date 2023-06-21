@@ -20,9 +20,7 @@ public class IndexController {
         // postsService.findAllDesc()로 가져온 결과를 posts로 index.mustache에 전달
 
         model.addAttribute("posts", postsService.findAllDesc());
-
         SessionUser users = (SessionUser) httpSession.getAttribute("users");
-
         if(users != null)
             model.addAttribute("userName", users.getName());
 
